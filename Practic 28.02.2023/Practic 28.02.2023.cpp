@@ -150,6 +150,46 @@ void Test_Dir(){
 }
 
 
+    // ||ДИРЕКТОРИИ||
+    #include <direct.h>
+    // int _mkdir(const char* dirname) - создаёт директорию по указанному пути
+    // int _rmdir(const char* dirname) - удаляет директорию по указанному пути
+
+void Test_RenameDirectory() {
+    char oldName[50];
+    char newName[50];
+
+    cout << "Enter the old name -> "; cin >> oldName;
+    cout << "Enter the new name -> "; cin >> newName;
+
+    if (rename(oldName, newName) != 0)
+        cout << "Error!\directory haven't been renamed\n";
+    else
+        cout << "Successfuly!\n";
+}
+
+void Test_RemoveDirectory() {
+
+    char name[50];
+
+    cout << "Enter the name -> "; cin >> name;
+
+    if (_rmdir(name) != -1)
+        cout << "Error!\n directory haven't been deleted\n";
+    else
+        cout << "Successfuly!\n";
+}
+
+void Test_CreateDirectory() {
+    char name[50];
+    cout << "Enter the name -> "; cin >> name;
+
+    if (_mkdir(name) != -1)
+        cout << "Error!\n directory haven't been deleted\n";
+    else
+        cout << "Successfuly!\n";
+}
+
 void main()
 {
     cout << "Please, select preffer number\n";
